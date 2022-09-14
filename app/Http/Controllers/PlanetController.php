@@ -25,7 +25,7 @@ class PlanetController extends Controller
      */
     public function create()
     {
-        //
+        return view('planets.create');
     }
 
     /**

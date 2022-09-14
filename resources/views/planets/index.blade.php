@@ -38,7 +38,7 @@
         </tbody>
     </table>
 
-    <a href="/planets/{{ $planet->id }}">新規登録</a>
+    <a href="/planets/create">新規登録</a>
 
 </body>
 
