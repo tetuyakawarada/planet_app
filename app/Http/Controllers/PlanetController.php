@@ -47,7 +47,8 @@ class PlanetController extends Controller
      */
     public function show($id)
     {
-        //
+        $planet = Planet::find($id);
+        return view('planets.show', ['planet' => $planet]);
     }
 
     /**
@@ -58,7 +59,9 @@ class PlanetController extends Controller
      */
     public function edit($id)
     {
-        //
+        $planet = Planet::find($id);
+
+        return view('planets.edit', ['planet' => $planet]);
     }
 
     /**
