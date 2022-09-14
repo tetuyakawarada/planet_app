@@ -84,8 +84,23 @@ class PlanetController extends Controller
      */
     public function update(PlanetRequest $request, $id)
     {
-        //
+        // ここはidで探して持ってくる以外はstoreと同じ
+        $planet = Planet::find($id);
+
+        // 値の用意
+        $planet->name = $request->name;
+        $planet->english_name = $request->english_name;
+        $planet->radius = $request->radius;
+        $planet->weight = $request->weight;
+
+        // 保存
+        $planet->save();
+
+        // 登録したらindexに戻る
+        return redirect('/planets');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
