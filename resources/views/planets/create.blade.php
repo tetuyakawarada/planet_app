@@ -11,6 +11,18 @@
 <body>
     <h1>惑星情報登録</h1>
 
+    @if ($errors->any())
+        <div>
+            <p>【エラー内容】</p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <form action="/planets" method="post">
         @csrf
         <p>
@@ -40,8 +52,3 @@
 </body>
 
 </html>
-
-{{-- <p>名前 <input type="text" name="name" value="{{ old('name') }}"></p>
-        <p>名前(英語) <input type="text" name="english_name" value="{{ old('english_name') }}"></p>
-        <p>半径 <input type="integer" name="radius" value="{{ old('radius') }}"></p>
-        <p>重量 <input type="integer" name="weight" value="{{ old('weight') }}"></p> --}}

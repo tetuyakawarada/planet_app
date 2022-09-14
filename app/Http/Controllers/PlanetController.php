@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Planet;
-use Illuminate\Http\Request;
+use App\Http\Requests\PlanetRequest;
+
 
 
 class PlanetController extends Controller
@@ -35,21 +36,17 @@ class PlanetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlanetRequest $request)
     {
-        // インスタンスの作成
         $planet = new Planet;
 
-        // 値の用意
         $planet->name = $request->name;
         $planet->english_name = $request->english_name;
         $planet->radius = $request->radius;
         $planet->weight = $request->weight;
 
-        // インスタンスに値を設定して保存
         $planet->save();
 
-        // 登録したらindexに戻る
         return redirect('/planets');
     }
 
@@ -85,7 +82,7 @@ class PlanetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PlanetRequest $request, $id)
     {
         //
     }
