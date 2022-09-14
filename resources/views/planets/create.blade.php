@@ -13,10 +13,26 @@
 
     <form action="/planets" method="post">
         @csrf
-        <p>名前 <input type="text" name="name" value="{{ old('name') }}"></p>
-        <p>名前(英語) <input type="text" name="english_name" value="{{ old('english_name') }}"></p>
-        <p>半径 <input type="integer" name="radius" value="{{ old('radius') }}"></p>
-        <p>重量 <input type="integer" name="weight" value="{{ old('weight') }}"></p>
+        <p>
+            <label for="name">名前 </label>
+            <input type="text" name="name" value="{{ old('name') }}">
+        </p>
+
+        <p>
+            <label for="english_name">名前(英語) </label>
+            <input type="text" name="english_name" value="{{ old('english_name') }}">
+        </p>
+
+        <p>
+            <label for="radius">半径 </label>
+            <input type="number" name="radius" value="{{ old('radius') }}">
+        </p>
+
+        <p>
+            <label for="weight">重量 </label>
+            <input type="number" name="weight" value="{{ old('weight') }}">
+        </p>
+
         <input type="submit" value="登録"><br>
         <a href="/planets">戻る</a>
     </form>
@@ -24,3 +40,8 @@
 </body>
 
 </html>
+
+{{-- <p>名前 <input type="text" name="name" value="{{ old('name') }}"></p>
+        <p>名前(英語) <input type="text" name="english_name" value="{{ old('english_name') }}"></p>
+        <p>半径 <input type="integer" name="radius" value="{{ old('radius') }}"></p>
+        <p>重量 <input type="integer" name="weight" value="{{ old('weight') }}"></p> --}}

@@ -41,7 +41,7 @@ class PlanetController extends Controller
         $planet = new Planet;
 
         // 値の用意
-        $planet->name = $request->title;
+        $planet->name = $request->name;
         $planet->english_name = $request->english_name;
         $planet->radius = $request->radius;
         $planet->weight = $request->weight;
