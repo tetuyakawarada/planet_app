@@ -23,6 +23,7 @@
                 <th></th>
             </tr>
         </thead>
+
         <tbody>
             @foreach ($planets as $planet)
                 <tr>
@@ -32,7 +33,13 @@
                     <td>{{ $planet->weight }}</td>
                     <td><a href="/planets/{{ $planet->id }}">詳細</a></td>
                     <td><a href="/planets/{{ $planet->id }}/edit">編集</a></td>
-                    <td><input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};"></td>
+                    <td>
+                        <form action="/planets/{{ $planet->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

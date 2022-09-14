@@ -98,6 +98,8 @@ class PlanetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $planet = Planet::find($id);
+        $planet->delete();
+        return redirect('/planets');
     }
 }
